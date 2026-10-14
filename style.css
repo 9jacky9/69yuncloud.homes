@@ -1,0 +1,906 @@
+/* 69yuncloud.homes - 晨曦流光 (Solar Dawn) 原生极简高能效 CSS */
+:root {
+  --solar-bg: #0d0f14;
+  --solar-surface: #151821;
+  --solar-surface-light: #1e222e;
+  --solar-amber: #f59e0b;
+  --solar-gold: #fbbf24;
+  --solar-warm: #ea580c;
+  --solar-cream: #fffbeb;
+  --solar-text: #f1f5f9;
+  --solar-muted: #94a3b8;
+  --solar-dim: #64748b;
+  --solar-border: #262b3a;
+  --solar-glow: rgba(245, 158, 11, 0.2);
+  --solar-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--solar-font);
+  background-color: var(--solar-bg);
+  color: var(--solar-text);
+  line-height: 1.68;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 浮动胶囊导航 (Stick Top) */
+.solar-nav-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 12px 20px;
+  background: rgba(13, 15, 20, 0.94);
+  border-bottom: 1px solid rgba(38, 43, 58, 0.6);
+}
+.solar-nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  background: #151821;
+  border: 1px solid var(--solar-border);
+  border-radius: 999px;
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+.solar-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+}
+.solar-nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--solar-muted);
+  transition: all 0.25s ease;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.solar-nav-link:hover {
+  color: var(--solar-cream);
+  background: rgba(245, 158, 11, 0.12);
+}
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+.solar-logo-link {
+  display: flex;
+  align-items: center;
+}
+.solar-logo-svg {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+.solar-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+  color: #0d0f14;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px var(--solar-glow);
+}
+.solar-nav-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+/* 按钮通用 */
+.solar-btn-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%);
+  color: #0b0c10;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  min-height: 50px;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px var(--solar-glow);
+  border: none;
+  cursor: pointer;
+}
+.solar-btn-main:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+.solar-btn-pbn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--solar-surface-light);
+  color: var(--solar-gold);
+  border: 1px solid #3b4256;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  min-height: 50px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.solar-btn-pbn:hover {
+  background: #282f42;
+  border-color: var(--solar-amber);
+  color: #ffffff;
+}
+
+/* 居中流光叙事 Hero */
+.solar-hero-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+  text-align: center;
+  position: relative;
+}
+.solar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--solar-gold);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+.solar-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #f59e0b;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #f59e0b;
+}
+.solar-hero-title {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--solar-text);
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+.solar-hero-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.solar-hero-sub {
+  font-size: 19px;
+  color: var(--solar-muted);
+  max-width: 720px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+}
+.solar-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* 晨曦流光日冕环轨动态插画 (Solar Dawn Motion Visual) */
+.solar-motion-container {
+  max-width: 780px;
+  margin: 0 auto 44px;
+  background: var(--solar-surface);
+  border: 1px solid var(--solar-border);
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 0 35px rgba(245, 158, 11, 0.15);
+  overflow: hidden;
+}
+.solar-motion-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes solarCoronaSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes solarPulseBreath {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+@keyframes solarOrbitRevolve {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes solarStreamGlide {
+  0% { stroke-dashoffset: 380; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.solar-corona-rotator {
+  transform-origin: 240px 140px;
+  animation: solarCoronaSpin 24s linear infinite;
+}
+.solar-core-breath {
+  transform-origin: 240px 140px;
+  animation: solarPulseBreath 3.5s ease-in-out infinite;
+}
+.solar-orbit-1 {
+  transform-origin: 240px 140px;
+  animation: solarOrbitRevolve 12s linear infinite;
+}
+.solar-orbit-2 {
+  transform-origin: 240px 140px;
+  animation: solarOrbitRevolve 18s linear infinite reverse;
+}
+.solar-stream-pulse {
+  stroke-dasharray: 60 100;
+  animation: solarStreamGlide 3s linear infinite;
+}
+
+/* 晨曦设备互通横幅条 */
+.solar-feature-strip {
+  max-width: 1040px;
+  margin: 0 auto 40px;
+  background: var(--solar-surface);
+  border: 1px solid var(--solar-border);
+  border-radius: 20px;
+  padding: 24px 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+.strip-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.strip-icon-circ {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(245, 158, 11, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.strip-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--solar-text);
+}
+.strip-desc {
+  font-size: 13px;
+  color: var(--solar-muted);
+}
+
+/* 通用章节 */
+.solar-section {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+.solar-sec-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.solar-sec-badge {
+  font-size: 12px;
+  color: var(--solar-amber);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+.solar-sec-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--solar-text);
+  margin-bottom: 12px;
+}
+.solar-sec-subtitle {
+  font-size: 16px;
+  color: var(--solar-muted);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* 核心特性卡片 (众人选择的硬核底气 - 3张) */
+.conviction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.conviction-card {
+  background: var(--solar-surface);
+  border: 1px solid var(--solar-border);
+  border-radius: 24px;
+  padding: 36px 28px;
+  position: relative;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.conviction-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+.conviction-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(234, 88, 12, 0.15) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+.conviction-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--solar-text);
+}
+.conviction-card p {
+  font-size: 14px;
+  color: var(--solar-muted);
+  line-height: 1.68;
+}
+
+/* 沉浸视听与前沿生产力全景支持 (3张) */
+.media-grid-homes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.media-card-homes {
+  background: var(--solar-surface);
+  border: 1px solid var(--solar-border);
+  border-radius: 24px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.media-card-homes .icon-holder {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+}
+.media-card-homes h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.media-card-homes p {
+  font-size: 14px;
+  color: var(--solar-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.media-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.media-pill {
+  font-size: 12px;
+  color: var(--solar-gold);
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+
+/* 透明订购套餐方案 (必须3款) */
+.pricing-solar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+.solar-price-card {
+  background: var(--solar-surface);
+  border: 1px solid var(--solar-border);
+  border-radius: 26px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.solar-price-card.popular {
+  border: 2px solid var(--solar-amber);
+  background: linear-gradient(180deg, #1c1f2b 0%, #151821 100%);
+  box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+}
+.popular-flag {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #f59e0b, #ea580c);
+  color: #000;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 16px;
+  border-radius: 999px;
+}
+.solar-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.solar-card-sub {
+  font-size: 13px;
+  color: var(--solar-muted);
+  margin-bottom: 24px;
+}
+.solar-cost {
+  margin-bottom: 26px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--solar-border);
+}
+.solar-currency {
+  font-size: 22px;
+  color: var(--solar-amber);
+  vertical-align: top;
+}
+.solar-amount {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+}
+.solar-cycle {
+  font-size: 14px;
+  color: var(--solar-dim);
+}
+.solar-perks {
+  list-style: none;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+.solar-perks li {
+  font-size: 14px;
+  color: var(--solar-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.solar-perk-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--solar-amber);
+}
+
+/* 常见使用困惑与解答 (3项) */
+.faq-solar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.faq-solar-item {
+  background: var(--solar-surface);
+  border: 1px solid var(--solar-border);
+  border-radius: 18px;
+  padding: 24px 28px;
+}
+.faq-solar-q {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--solar-cream);
+}
+.faq-solar-a {
+  font-size: 14px;
+  color: var(--solar-muted);
+  line-height: 1.65;
+}
+
+/* 真实用户使用体验 (4项) */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.review-card {
+  background: var(--solar-surface);
+  border: 1px solid var(--solar-border);
+  border-radius: 20px;
+  padding: 28px;
+}
+.review-quote {
+  font-size: 14px;
+  color: var(--solar-muted);
+  line-height: 1.68;
+  margin-bottom: 20px;
+}
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+.review-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+.review-role {
+  font-size: 12px;
+  color: var(--solar-dim);
+}
+
+/* 晨曦极简页脚：严格仅显示4个中文标题 */
+.solar-footer {
+  border-top: 1px solid var(--solar-border);
+  background: #090a0e;
+  padding: 42px 20px;
+}
+.solar-footer-links {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.solar-footer-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--solar-muted);
+  transition: color 0.2s ease;
+  padding: 6px 14px;
+}
+.solar-footer-title:hover {
+  color: var(--solar-amber);
+}
+
+/* 子页面规范排版 */
+.solar-sub-container {
+  max-width: 860px;
+  margin: 40px auto 90px;
+  padding: 0 24px;
+}
+.solar-sub-head {
+  border-bottom: 1px solid var(--solar-border);
+  padding-bottom: 24px;
+  margin-bottom: 36px;
+}
+.solar-sub-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--solar-cream);
+  margin-bottom: 10px;
+}
+.solar-sub-date {
+  font-size: 13px;
+  color: var(--solar-dim);
+}
+.solar-sub-body {
+  font-size: 15px;
+  color: var(--solar-muted);
+  line-height: 1.8;
+}
+.solar-sub-body h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--solar-text);
+  margin: 36px 0 16px;
+  position: relative;
+  padding-left: 14px;
+}
+.solar-sub-body h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  background: var(--solar-amber);
+  border-radius: 2px;
+}
+.solar-sub-body h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--solar-gold);
+  margin: 22px 0 10px;
+}
+.solar-sub-body p {
+  margin-bottom: 16px;
+}
+.solar-sub-body ul {
+  margin-bottom: 22px;
+  padding-left: 20px;
+}
+.solar-sub-body li {
+  margin-bottom: 8px;
+}
+
+/* 响应式媒体查询 (< 768px) */
+@media (max-width: 768px) {
+  .solar-nav-wrapper {
+    padding: 10px 12px;
+  }
+  .solar-nav {
+    border-radius: 20px;
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .solar-nav-menu {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .solar-nav-link {
+    font-size: 13px;
+    padding: 4px 10px;
+  }
+  .solar-nav-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .solar-hero-title {
+    font-size: 34px;
+  }
+  .solar-hero-sub {
+    font-size: 16px;
+  }
+  .solar-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .solar-hero-actions a {
+    width: 100%;
+  }
+  .solar-feature-strip {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+  .conviction-grid,
+  .media-grid-homes,
+  .pricing-solar-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .solar-footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* 破晓专属链接色彩规范 (杜绝浏览器默认蓝/紫色) */
+.article-body a:link,
+.article-body a:visited,
+.solar-sub-body a:link,
+.solar-sub-body a:visited {
+  color: var(--solar-amber) !important;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.25s ease;
+}
+.article-body a:hover,
+.solar-sub-body a:hover {
+  color: var(--solar-gold) !important;
+}
+
+/* 破晓观察专栏汇聚页样式 */
+.perspectives-wrapper {
+  max-width: 1080px;
+  margin: 40px auto 100px;
+  padding: 0 24px;
+}
+.perspectives-header {
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--solar-border);
+  padding-bottom: 30px;
+}
+.perspectives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.perspective-card {
+  background: var(--solar-surface);
+  border: 1px solid var(--solar-border);
+  border-radius: 22px;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+.perspective-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: translateY(-4px);
+  background: #191c26;
+}
+.perspective-pill {
+  font-size: 11px;
+  color: var(--solar-gold);
+  background: rgba(245, 158, 11, 0.1);
+  padding: 3px 10px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+.perspective-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--solar-text);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+.perspective-card-title a {
+  color: var(--solar-text) !important;
+  text-decoration: none !important;
+}
+.perspective-card-title a:hover {
+  color: var(--solar-gold) !important;
+}
+.perspective-card-excerpt {
+  font-size: 14px;
+  color: var(--solar-muted);
+  line-height: 1.62;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+.perspective-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--solar-dim);
+  border-top: 1px solid var(--solar-border);
+  padding-top: 14px;
+}
+
+/* 独立文章详情页专用排版 */
+.solar-article-container {
+  max-width: 860px;
+  margin: 30px auto 90px;
+  padding: 0 24px;
+}
+.solar-article-crumb {
+  font-size: 13px;
+  color: var(--solar-dim);
+  margin-bottom: 24px;
+  display: flex;
+  gap: 8px;
+}
+.solar-article-crumb a {
+  color: var(--solar-muted) !important;
+  text-decoration: none !important;
+}
+.solar-article-crumb a:hover {
+  color: var(--solar-amber) !important;
+}
+.solar-article-head {
+  border-bottom: 1px solid var(--solar-border);
+  padding-bottom: 28px;
+  margin-bottom: 34px;
+}
+.solar-article-main-title {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--solar-cream);
+  margin-bottom: 16px;
+}
+.solar-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  color: var(--solar-dim);
+}
+.article-body {
+  font-size: 16px;
+  color: #cbd5e1;
+  line-height: 1.85;
+}
+.article-body h2 {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--solar-cream);
+  margin: 40px 0 16px;
+  position: relative;
+  padding-left: 14px;
+}
+.article-body h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  background: var(--solar-amber);
+  border-radius: 2px;
+}
+.article-body h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--solar-gold);
+  margin: 26px 0 12px;
+}
+.article-body p {
+  margin-bottom: 18px;
+}
+.article-body ul, .article-body ol {
+  margin-bottom: 22px;
+  padding-left: 24px;
+}
+.article-body li {
+  margin-bottom: 8px;
+}
+.solar-article-box {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  color: var(--solar-cream);
+  font-size: 15px;
+}
+.solar-article-footer-nav {
+  margin-top: 50px;
+  padding-top: 28px;
+  border-top: 1px solid var(--solar-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .perspectives-grid {
+    grid-template-columns: 1fr;
+  }
+  .solar-article-main-title {
+    font-size: 26px;
+  }
+}
+
